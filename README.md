@@ -1,16 +1,20 @@
-# ajybek_caltor
+# BMI calculator
 
-A new Flutter project.
+A body mass index calculator in Flutter with a dark interface.
 
-## Getting Started
+## How it works
 
-This project is a starting point for a Flutter application.
+- Choose MALE or FEMALE.
+- Set the height with a slider (in cm).
+- Set the weight (not below 30 kg) and the age (not below 10) with the plus and minus buttons.
+- Press CALCULATE to open the result screen.
+- The index is `weight / (height in meters)²`. The result screen shows it with a short text for the group: below 18.5, 18.5 to 24.9, 25 to 29.9, and 30 and above.
 
-A few resources to get you started if this is your first Flutter project:
+The result screen is in Kyrgyz.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Run it
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
