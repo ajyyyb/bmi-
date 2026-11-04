@@ -37,7 +37,7 @@ class BMIInputScreen extends StatefulWidget {
   const BMIInputScreen({super.key});
 
   @override
-  _BMIInputScreenState createState() => _BMIInputScreenState();
+  State<BMIInputScreen> createState() => _BMIInputScreenState();
 }
 
 class _BMIInputScreenState extends State<BMIInputScreen> {
