@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           elevation: 0,
           centerTitle: true,
-          color: Color(0xff1d1e33),
+          backgroundColor: Color(0xff1d1e33),
         ),
       ),
       home: BMIInputScreen(),
@@ -37,7 +37,7 @@ class BMIInputScreen extends StatefulWidget {
   const BMIInputScreen({super.key});
 
   @override
-  _BMIInputScreenState createState() => _BMIInputScreenState();
+  State<BMIInputScreen> createState() => _BMIInputScreenState();
 }
 
 class _BMIInputScreenState extends State<BMIInputScreen> {

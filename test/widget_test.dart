@@ -1,30 +1,24 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:ajybek_caltor/main.dart';
 
+Future<void> showResult(WidgetTester tester, {required double height, required int weight}) {
+  return tester.pumpWidget(MaterialApp(home: BMIResultScreen(height: height, weight: weight)));
+}
+
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('the result screen shows the index and its group', (tester) async {
+    await showResult(tester, height: 180, weight: 81);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('25.0'), findsOneWidget);
+    expect(find.text('Артык салмак'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('a normal index is labelled as normal', (tester) async {
+    await showResult(tester, height: 175, weight: 70);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('22.9'), findsOneWidget);
+    expect(find.text('Нормалдуу'), findsOneWidget);
   });
 }
