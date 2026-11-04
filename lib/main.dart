@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           elevation: 0,
           centerTitle: true,
-          color: Color(0xff1d1e33),
+          backgroundColor: Color(0xff1d1e33),
         ),
       ),
       home: BMIInputScreen(),
